@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{pgfplots}    % plot stuff
+\pgfplotsset{compat=1.6} % avoid warnings
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+  axis equal image,
+  xmin=13,xmax=35,
+  ymin=0,ymax=3,
+  width=7in,
+  xlabel={$x/D$ (-)},
+  ylabel={$y/D$ (-)},
+]
+  \foreach \num in {1,2,...,18} {
+    \addplot[black] file {time43.39stream\num.dat};
+  }
+  \draw[fill=black] (axis cs:15,1) rectangle (axis cs:16,2);
+\end{axis}
+\end{tikzpicture}
+\end{document}
+

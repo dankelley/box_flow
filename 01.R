@@ -1,0 +1,5 @@
+library(oce)
+u <- read.table("u.dat", header=FALSE)
+nrow <- as.integer(strsplit(system("wc u.dat", intern=TRUE),"[ ]+")[[1]][2])
+u <- matrix(u, nrow=nrow, byrow=TRUE)
+imagep(u)
